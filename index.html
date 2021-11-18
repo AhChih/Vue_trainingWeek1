@@ -31,8 +31,8 @@
                 <td>{{ res.origin_price }}</td>
                 <td>{{ res.price }}</td>
                 <td>
-                  <span v-if="res.is_enabled" class="text-success">啟用</span>
-                  <span v-else class="text-danger">未啟用</span>
+                  <span v-if="res.is_enabled" class="text-success" @click="changeEnabled(res)">啟用</span>
+                  <span v-else class="text-danger" @click="changeEnabled(res)">未啟用</span>
                 </td>
                 <td>
                   <button type="button" class="btn btn-primary" @click="openDetail(res)">查看細節</button>

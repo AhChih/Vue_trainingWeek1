@@ -26,7 +26,7 @@ createApp({
           content: "尺寸：6寸",
           description: "蜜蜂蜜蛋糕，夾層夾上酸酸甜甜的檸檬餡，清爽可口的滋味讓人口水直流！",
           id: "-McJ-VvcwfN1_Ye_NtVA",
-          is_enabled: 16,
+          is_enabled: 1,
           origin_price: 1000,
           price: 900,
           title: "蜂蜜檸檬蛋糕",
@@ -61,7 +61,13 @@ createApp({
   methods: {
     openDetail(res){
       this.tempProduct = res
-      console.log(res)
+    },
+    changeEnabled(res){
+      if (res.is_enabled) {
+        res.is_enabled = 0
+      } else if (res.is_enabled == 0) {
+        res.is_enabled = 1
+      }
     }
   }
 }).mount('#app');
